@@ -249,7 +249,7 @@ namespace pryBaldovinoCabaña
             cboTarjetas.Items.Add("Card Green");
             cboTarjetas.Items.Add("Card Blue");
             // deshabiliar el botón "Aceptar"
-            btnAceptar.Enabled = false;
+            btnReservar.Enabled = false;
 
 
             CargarDatos();
@@ -307,11 +307,11 @@ namespace pryBaldovinoCabaña
             if (txtDias.Text != "" && txtDias.Text != "0" &&
             txtNombre.Text != "" && txtTelefonos.Text != "")
             {
-                btnAceptar.Enabled = true;
+                btnReservar.Enabled = true;
             }
             else
             {
-                btnAceptar.Enabled = false;
+                btnReservar.Enabled = false;
             }
         }
 
@@ -321,11 +321,11 @@ namespace pryBaldovinoCabaña
             if (txtDias.Text != "" && txtDias.Text != "0" &&
             txtNombre.Text != "" && txtTelefonos.Text != "")
             {
-                btnAceptar.Enabled = true;
+                btnReservar.Enabled = true;
             }
             else
             {
-                btnAceptar.Enabled = false;
+                btnReservar.Enabled = false;
             }
         }
 
@@ -335,11 +335,11 @@ namespace pryBaldovinoCabaña
             if (txtDias.Text != "" && txtDias.Text != "0" &&
             txtNombre.Text != "" && txtTelefonos.Text != "")
             {
-                btnAceptar.Enabled = true;
+                btnReservar.Enabled = true;
             }
             else
             {
-                btnAceptar.Enabled = false;
+                btnReservar.Enabled = false;
             }
         }
     }

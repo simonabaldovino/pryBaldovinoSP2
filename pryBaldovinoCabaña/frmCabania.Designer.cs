@@ -35,7 +35,7 @@
             lblPersonas = new Label();
             cboTipo = new ComboBox();
             lblTipo = new Label();
-            btnAceptar = new Button();
+            btnReservar = new Button();
             grpAdicionales = new GroupBox();
             chkTelevisor = new CheckBox();
             chkHeladera = new CheckBox();
@@ -132,15 +132,15 @@
             lblTipo.TabIndex = 0;
             lblTipo.Text = "Tipo";
             // 
-            // btnAceptar
+            // btnReservar
             // 
-            btnAceptar.Location = new Point(443, 451);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(96, 28);
-            btnAceptar.TabIndex = 1;
-            btnAceptar.Text = "Aceptar ";
-            btnAceptar.UseVisualStyleBackColor = true;
-            btnAceptar.Click += btnAceptar_Click;
+            btnReservar.Location = new Point(443, 451);
+            btnReservar.Name = "btnReservar";
+            btnReservar.Size = new Size(96, 28);
+            btnReservar.TabIndex = 1;
+            btnReservar.Text = "Reservar";
+            btnReservar.UseVisualStyleBackColor = true;
+            btnReservar.Click += btnAceptar_Click;
             // 
             // grpAdicionales
             // 
@@ -318,7 +318,7 @@
             Controls.Add(grpFormasPago);
             Controls.Add(dgvDatos);
             Controls.Add(grpAdicionales);
-            Controls.Add(btnAceptar);
+            Controls.Add(btnReservar);
             Controls.Add(grpTipo);
             Name = "frmCabania";
             StartPosition = FormStartPosition.CenterScreen;
@@ -345,7 +345,7 @@
         private Label lblPersonas;
         private ComboBox cboTipo;
         private Label lblTipo;
-        private Button btnAceptar;
+        private Button btnReservar;
         private GroupBox grpAdicionales;
         private CheckBox chkTelevisor;
         private CheckBox chkHeladera;
