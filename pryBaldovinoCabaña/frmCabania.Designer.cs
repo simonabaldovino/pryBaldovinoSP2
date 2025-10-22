@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCabania));
             grpTipo = new GroupBox();
             txtDias = new TextBox();
             lblDias = new Label();
@@ -320,6 +321,7 @@
             Controls.Add(grpAdicionales);
             Controls.Add(btnReservar);
             Controls.Add(grpTipo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCabania";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCabania";
