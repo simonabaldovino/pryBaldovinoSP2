@@ -44,9 +44,21 @@
             colTipo = new DataGridViewTextBoxColumn();
             colPersonas = new DataGridViewTextBoxColumn();
             colDias = new DataGridViewTextBoxColumn();
+            grpFormasPago = new GroupBox();
+            cboTarjetas = new ComboBox();
+            lblTarjetas = new Label();
+            optTarjeta = new RadioButton();
+            optEfectivo = new RadioButton();
+            grpTitular = new GroupBox();
+            txtTelefonos = new TextBox();
+            lblTelefonos = new Label();
+            txtNombre = new TextBox();
+            lblNombre = new Label();
             grpTipo.SuspendLayout();
             grpAdicionales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
+            grpFormasPago.SuspendLayout();
+            grpTitular.SuspendLayout();
             SuspendLayout();
             // 
             // grpTipo
@@ -70,6 +82,7 @@
             txtDias.Name = "txtDias";
             txtDias.Size = new Size(80, 23);
             txtDias.TabIndex = 5;
+            txtDias.TextChanged += txtDias_TextChanged;
             // 
             // lblDias
             // 
@@ -108,6 +121,7 @@
             cboTipo.Name = "cboTipo";
             cboTipo.Size = new Size(121, 23);
             cboTipo.TabIndex = 1;
+            cboTipo.SelectedIndexChanged += cboTipo_SelectedIndexChanged;
             // 
             // lblTipo
             // 
@@ -120,7 +134,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(443, 410);
+            btnAceptar.Location = new Point(443, 451);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(96, 28);
             btnAceptar.TabIndex = 1;
@@ -135,7 +149,7 @@
             grpAdicionales.Controls.Add(chkCocina);
             grpAdicionales.Location = new Point(32, 165);
             grpAdicionales.Name = "grpAdicionales";
-            grpAdicionales.Size = new Size(134, 144);
+            grpAdicionales.Size = new Size(133, 127);
             grpAdicionales.TabIndex = 2;
             grpAdicionales.TabStop = false;
             grpAdicionales.Text = "Adicionales";
@@ -143,7 +157,7 @@
             // chkTelevisor
             // 
             chkTelevisor.AutoSize = true;
-            chkTelevisor.Location = new Point(23, 108);
+            chkTelevisor.Location = new Point(20, 102);
             chkTelevisor.Name = "chkTelevisor";
             chkTelevisor.Size = new Size(71, 19);
             chkTelevisor.TabIndex = 2;
@@ -153,7 +167,7 @@
             // chkHeladera
             // 
             chkHeladera.AutoSize = true;
-            chkHeladera.Location = new Point(23, 70);
+            chkHeladera.Location = new Point(20, 64);
             chkHeladera.Name = "chkHeladera";
             chkHeladera.Size = new Size(73, 19);
             chkHeladera.TabIndex = 1;
@@ -163,7 +177,7 @@
             // chkCocina
             // 
             chkCocina.AutoSize = true;
-            chkCocina.Location = new Point(23, 35);
+            chkCocina.Location = new Point(20, 29);
             chkCocina.Name = "chkCocina";
             chkCocina.Size = new Size(63, 19);
             chkCocina.TabIndex = 0;
@@ -174,9 +188,9 @@
             // 
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDatos.Columns.AddRange(new DataGridViewColumn[] { colTipo, colPersonas, colDias });
-            dgvDatos.Location = new Point(185, 165);
+            dgvDatos.Location = new Point(572, 37);
             dgvDatos.Name = "dgvDatos";
-            dgvDatos.Size = new Size(354, 219);
+            dgvDatos.Size = new Size(343, 387);
             dgvDatos.TabIndex = 3;
             // 
             // colTipo
@@ -194,16 +208,120 @@
             colDias.HeaderText = "Días";
             colDias.Name = "colDias";
             // 
+            // grpFormasPago
+            // 
+            grpFormasPago.Controls.Add(cboTarjetas);
+            grpFormasPago.Controls.Add(lblTarjetas);
+            grpFormasPago.Controls.Add(optTarjeta);
+            grpFormasPago.Controls.Add(optEfectivo);
+            grpFormasPago.Location = new Point(193, 165);
+            grpFormasPago.Name = "grpFormasPago";
+            grpFormasPago.Size = new Size(346, 127);
+            grpFormasPago.TabIndex = 4;
+            grpFormasPago.TabStop = false;
+            grpFormasPago.Text = "Formas de Pago";
+            // 
+            // cboTarjetas
+            // 
+            cboTarjetas.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTarjetas.FormattingEnabled = true;
+            cboTarjetas.Location = new Point(125, 86);
+            cboTarjetas.Name = "cboTarjetas";
+            cboTarjetas.Size = new Size(194, 23);
+            cboTarjetas.TabIndex = 3;
+            // 
+            // lblTarjetas
+            // 
+            lblTarjetas.AutoSize = true;
+            lblTarjetas.Location = new Point(125, 68);
+            lblTarjetas.Name = "lblTarjetas";
+            lblTarjetas.Size = new Size(46, 15);
+            lblTarjetas.TabIndex = 2;
+            lblTarjetas.Text = "Tarjetas";
+            // 
+            // optTarjeta
+            // 
+            optTarjeta.AutoSize = true;
+            optTarjeta.Location = new Point(24, 64);
+            optTarjeta.Name = "optTarjeta";
+            optTarjeta.Size = new Size(62, 19);
+            optTarjeta.TabIndex = 1;
+            optTarjeta.TabStop = true;
+            optTarjeta.Text = "Tarjeta ";
+            optTarjeta.UseVisualStyleBackColor = true;
+            // 
+            // optEfectivo
+            // 
+            optEfectivo.AutoSize = true;
+            optEfectivo.Location = new Point(24, 29);
+            optEfectivo.Name = "optEfectivo";
+            optEfectivo.Size = new Size(67, 19);
+            optEfectivo.TabIndex = 0;
+            optEfectivo.TabStop = true;
+            optEfectivo.Text = "Efectivo";
+            optEfectivo.UseVisualStyleBackColor = true;
+            optEfectivo.CheckedChanged += optEfectivo_CheckedChanged;
+            // 
+            // grpTitular
+            // 
+            grpTitular.Controls.Add(txtTelefonos);
+            grpTitular.Controls.Add(lblTelefonos);
+            grpTitular.Controls.Add(txtNombre);
+            grpTitular.Controls.Add(lblNombre);
+            grpTitular.Location = new Point(31, 309);
+            grpTitular.Name = "grpTitular";
+            grpTitular.Size = new Size(508, 115);
+            grpTitular.TabIndex = 5;
+            grpTitular.TabStop = false;
+            grpTitular.Text = "Titular de la Reserva ";
+            // 
+            // txtTelefonos
+            // 
+            txtTelefonos.Location = new Point(98, 74);
+            txtTelefonos.Name = "txtTelefonos";
+            txtTelefonos.Size = new Size(383, 23);
+            txtTelefonos.TabIndex = 7;
+            txtTelefonos.TextChanged += txtTelefonos_TextChanged;
+            // 
+            // lblTelefonos
+            // 
+            lblTelefonos.AutoSize = true;
+            lblTelefonos.Location = new Point(21, 77);
+            lblTelefonos.Name = "lblTelefonos";
+            lblTelefonos.Size = new Size(57, 15);
+            lblTelefonos.TabIndex = 4;
+            lblTelefonos.Text = "Teléfonos";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(98, 35);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(383, 23);
+            txtNombre.TabIndex = 6;
+            txtNombre.TextChanged += txtNombre_TextChanged;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(21, 38);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(51, 15);
+            lblNombre.TabIndex = 3;
+            lblNombre.Text = "Nombre";
+            // 
             // frmCabania
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(567, 450);
+            ClientSize = new Size(952, 503);
+            Controls.Add(grpTitular);
+            Controls.Add(grpFormasPago);
             Controls.Add(dgvDatos);
             Controls.Add(grpAdicionales);
             Controls.Add(btnAceptar);
             Controls.Add(grpTipo);
             Name = "frmCabania";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCabania";
             Load += frmCabania_Load;
             grpTipo.ResumeLayout(false);
@@ -211,6 +329,10 @@
             grpAdicionales.ResumeLayout(false);
             grpAdicionales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
+            grpFormasPago.ResumeLayout(false);
+            grpFormasPago.PerformLayout();
+            grpTitular.ResumeLayout(false);
+            grpTitular.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -232,5 +354,15 @@
         private DataGridViewTextBoxColumn colTipo;
         private DataGridViewTextBoxColumn colPersonas;
         private DataGridViewTextBoxColumn colDias;
+        private GroupBox grpFormasPago;
+        private ComboBox cboTarjetas;
+        private Label lblTarjetas;
+        private RadioButton optTarjeta;
+        private RadioButton optEfectivo;
+        private GroupBox grpTitular;
+        private Label lblTelefonos;
+        private Label lblNombre;
+        private TextBox txtTelefonos;
+        private TextBox txtNombre;
     }
 }
